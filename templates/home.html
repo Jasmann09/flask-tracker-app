@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="l" class="text"> Hello, {{session.get('username')}}</div>
+    <div class="centered_block">
+        <table>
+            <tr>
+                <th><div class="text">Name</div></th>
+                <th><div class="text">Last tracked</div></th>
+                <th><div class="text">New Event</div></th>
+                <th><div class="text">Priority</div></th>
+                <th><div class="text">Actions</div></th>
+            </tr>
+        {% for tp in tp %}
+            <tr>
+                <td><div class="text"><a href="/tp/{{tp.id}}/view">{{tp.name}}</a></div></td>
+                <td><div class="text">yesterday</div></td>
+                <td><div class="text"><a href="/tp/{{tp.id}}/records/add">+</a></div></td>
+                <td><div class="text"><a href="/tp/{{tp.id}}/view">{{tp.priority}}</a></div></td>
+                <td><div class="text"><a href="/tp/{{tp.id}}/edit">Edit</a></div>
+                    <div class="text"><a href="/tp/{{tp.id}}/delete">Delete</a></div></td>
+            </tr>
+        {% endfor %}
+        </table>
+        
+        <a href="/tp/add"><div id="box" class="test">ADD</div></a>
+    </div>
+    <style>
+        .centered_block{
+            font-size: x-large;
+            font-weight: bold;
+            background-color: rgb(71, 212, 212);
+            border: 5em;
+            border-radius: 1em;
+            
+        }
+        body{
+            background-color: blanchedalmond;
+        }
+        #s{
+            height: 3em;
+            width: 7em;
+            background-color: rgb(131, 237, 131);
+        }
+        input{
+            border-radius: 1em;
+            height: 2em;
+        }
+        #l{
+            font-size: xx-large;
+            margin-left: 1em;
+        }
+
+    </style>
+{% endblock %}

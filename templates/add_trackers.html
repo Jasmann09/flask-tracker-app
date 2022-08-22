@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="form">
+    <form method="POST">
+        <div class="text">Tracker Name</div><input type="text" placeholder="Tracker name" name="name">
+        <div class="text">Input type</div>
+        <select name="options" id="options">
+            <option value="Numerical">Numerical</option>
+            <option value="Multiple Choice">Multiple Choice</option>
+            <option value="Timestamp">Timestamp</option>
+        </select>
+        <div class="text">Settings</div><input type="text" placeholder="Only for MCQ type" name="settings">
+        <div class="text">Priority</div><input type="text" placeholder="priority" name="priority"><br><br>
+        <input id="s" type="submit" value="Add">
+    </form>
+</div>
+<style>
+    #form{
+        font-size: x-large;
+        font-weight: bold;
+        background-color: rgb(71, 212, 212);
+        border: 5em;
+        border-radius: 1em;
+        
+    }
+    body{
+        background-color: blanchedalmond;
+    }
+    #s{
+        height: 3em;
+        width: 7em;
+        background-color: rgb(131, 237, 131);
+    }
+    input{
+        border-radius: 1em;
+        height: 2em;
+    }
+    select{
+        border-radius: 1em;
+        height: 2em;
+
+    }
+</style>
+{% endblock %}

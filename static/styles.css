@@ -1,0 +1,102 @@
+
+body
+{
+    background-color: #ef9929;
+}
+.text
+{
+    color: black;
+}
+a
+{
+    color: black;
+    text-decoration: none;
+}
+a:hover
+{
+    color:#DEB887
+}
+#header .text
+{
+    display: inline;    
+}
+#box
+{
+    border: 1px solid #8B4513;
+    padding: 5px 20px 5px 20px;
+}
+#box:hover
+{
+    border: 1px solid thistle;
+}
+#box:hover .link
+{
+    color: #8B4513;
+}
+#title
+{
+    font-size: 20px;
+    padding: 2px;
+}
+#to_right
+{
+    position: relative;
+    float: right;
+}
+#form
+{
+    padding: 30px 0px 30px 0px;
+    margin: 100px 500px 0px 500px;
+    background-color: #8B4513;
+    text-align: center;
+}
+.flashed
+{
+    text-align: center;
+}
+#listable
+{
+    padding: 50px 0px 50px 0px;
+    margin: 50px 100px 100px 100px;
+    background-color: #8B4513;
+    text-align: center;
+}
+#listable .list_object
+{
+    padding: 20px 0px 20px 0px; 
+    background-color: #DEB887;
+    text-align: center;
+}
+#listable .list_object:hover
+{
+    background-color: #8B4513;
+}
+.link
+{
+    color: #8B4513;
+    text-decoration: none;
+}
+.centered_block
+{
+  
+  
+    text-align: center;
+}
+#header
+{
+    padding-bottom: 40px;
+}
+
+
+table, td, th {
+    border: 3px solid #DEB887;
+  }
+  
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}

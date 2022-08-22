@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if dat|length != 0 %}
+
+
+<div class="centered_block"  id="ch">
+    <table>
+        <tr>
+            <th><div class="text">Date</div></th>
+            <th><div class="text">Value</div></th>
+            <th><div class="text">Details</div></th>
+            <th><div class="text">Operations</div></th>
+        </tr>
+        {% for dat in dat %}
+        <tr>
+            <td><div class="text">{{dat.date}}</div></td>
+            <td><div class="text">{{dat.value}}</div></td>
+            <td><div class="text">{{dat.details}}</div></td>
+            <td><div class="text"><a href="/tp/{{tp_id}}/dat/{{dat.id}}">Edit</a></div></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/tp/{{tp_id}}/records/add"><div id="box" class="test">ADD</div></a>
+
+    <div class="chart">
+        <canvas id="myChart" style="border:1px solid #000000;"></canvas>
+    </div>
+    
+<script>
+    let kk=JSON.parse({{ ll | tojson }});
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Morning', 'Evenning','Afternoon'],
+        datasets: [{
+            label: '# of Votes',
+            data: kk,
+            backgroundColor: [
+               
+            'bisque',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'black',
+                
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+</div>
+
+<style>
+    nn{
+        background-color: bisque;
+    }
+     #form{
+            font-size: x-large;
+            font-weight: bold;
+            background-color: rgb(168, 212, 212);
+            border: 5em;
+            border-radius: 1em;
+            
+        }
+        body{
+            background-color:rgb(214, 247, 253);
+        }
+        #s{
+            height: 3em;
+            width: 7em;
+            background-color: rgb(131, 237, 131);
+        }
+        input{
+            border-radius: 1em;
+            height: 2em;
+        }
+      
+        #ch{
+            background-color: rgb(71, 212, 212) ;
+            display: flex;
+            height: 600px;
+            width: 1050px;
+           
+        }
+        .chart{
+            margin-top: 3em;
+            display: flex;
+            height: 50px;
+            width: 500px;
+            align-items: baseline;
+            justify-content: center;
+            
+        }
+
+
+</style>
+
+{% else %}
+<div class="text">There is no data available yet</div>
+<a href="/tp/{{tp_id}}/records/add"><div class="test">ADD A NEW LOG!</div></a>
+{% endif %}
+
+{% endblock %}
